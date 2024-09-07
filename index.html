@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Clima</h1>
+            <div class="search-container">
+                <input id="city-input" type="text" placeholder="Digite o nome da cidade">
+                <button id="search-btn">Buscar</button>
+            </div>
+            <div id="error-message">
+                <p></p>
+            </div>
+        </header>
+        <div class="loading-container">
+            <div id="loading" class="loading"></div>
+        </div>
+        <main class="hide">
+            <div class="current-weather">
+                <h2 id="city">Cidade</h2>
+                <p id="date"></p>
+                <div class="weather-info">
+                    <img id="weather-icon" src="path/to/default/icon.png" alt="ícone do clima">
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                </div>
+                <div id="additional-info">
+                    <p><span id="humidity"></span></p>
+                    <p><span id="wind-speed"></span></p>
+                </div>
+            </div>
+            <div class="forecast"></div>
+        </main>
+        <footer>
+            <p>© 2024 Ciro | Dados fornecidos por <a href="https://openweathermap.org/">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+    <script src="./js/script.js"></script>
+</body>

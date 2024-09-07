@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 13px;
+    width: 90%;
+    max-width: 600px;
+    min-height: 600px;
+    margin: 13px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 13px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.search-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#city-input {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    width: 210px;
+    max-width: 80%;
+    font-size: 1.6rem;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    margin-left: 3px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #555;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.6rem;
+    color: #555;
+}
+
+.loading::after {
+    content: "";
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+#error-message {
+    color: red;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.current-weather {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    margin-bottom: 10px;
+}
+
+#city {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#date {
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#temperature {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+#description {
+    font-size: 2.4rem;
+    margin-right: 20px;
+    color: #777;
+}
+
+#additional-info {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+#additional-info p {
+    font-size: 1.3rem;
+}
+
+.forecast {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.forecast-card {
+    display: flex;
+    flex: 1 1 calc(20% - 10px);
+    text-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 20%;
+}
+
+footer {
+    text-align: center;
+    margin: 10px;
+    font-size: 1.1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .forecast-card {
+        flex: 1 1 calc(25% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .forecast-card {
+        flex: 1 1 calc(33% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-info {
+        flex-direction: column;
+    }
+
+    #description {
+        margin: 0;
+    }
+
+    #additional-info {
+        justify-content: center;
+    }
+
+    .forecast-card {
+        flex: 1 1 100%;
+    }
+}
